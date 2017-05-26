@@ -15,10 +15,10 @@
     "url": "stefan.stoelzle.me"
   },
   "license": "MIT",
-  "homepage": "https://github.com/stoe/mdify-node#readme",
+  "homepage": "https://github.com/stoelzle/mdify-node#readme",
   "repository": "stoe/mdify-node",
   "bugs": {
-    "url": "https://github.com/stoe/mdify-node/issues"
+    "url": "https://github.com/stoelzle/mdify-node/issues"
   },
   "engines": {
     "node": ">=6"
