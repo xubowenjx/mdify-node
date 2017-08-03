@@ -11,9 +11,6 @@ plugins:
   - standard
 
 rules:
-  intent:
-    - 2
-    - spaces
   quotes:
     - 2
     - single
