@@ -1,0 +1,22 @@
+---
+engines:
+  eslint:
+    enabled: true
+  csslint:
+    enabled: true
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - javascript
+  shellcheck:
+    enabled: true
+ratings:
+  paths:
+  - "script/**"
+  - "**.js"
+exclude_paths:
+- assets/
+- data/
+- node_modules/
+- test/
