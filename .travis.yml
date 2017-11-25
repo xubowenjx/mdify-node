@@ -1,6 +1,7 @@
 language: node_js
 node_js:
   - 'node'
+  - '8'
   - '7'
   - '6'
 
@@ -8,6 +9,7 @@ matrix:
   fast_finish: true
   allow_failures:
     - node_js: 'node'
+    - node_js: '8'
 
 os:
   - osx
@@ -16,22 +18,14 @@ notifications:
   email:
     on_success: never
     on_failure: change
-  slack:
-    template:
-      - "%{repository_slug}@%{branch} (%{commit}): %{result} in %{duration}"
-      - "%{build_url}"
-    rooms:
-      secure: PQBPfOQmTakUgTwuiajtOje3o9K4TTeroZ4I+88aXKeFKPsUPtrAqMdpV1KkkNTkcm6m3NWDUrAeMRh8o5nmaJeXpfLeHZsEf19fhBV0Az39bCGhmF8VG4v3kWeRTb0ZxVTNlNojah9/66EW5/Z7TGMUDvGsdfPyLi1D70Hp9x0MAg6Ri3x66K8y13WQZVUnFm3pbAd2S1HZKX0tmzFeUTQvE8V4jr+iwKYPqnB1bJAQUTsCeUbFKLRGj5aO7/Uli6EOAWELJZvMQ1Bg7k8UBSJ9FFiYrRk+l4HG5Btx+i96zthr6eKWjPU4RYAcoShcDBczeysbPw4aXGC0hgSOSlT9M6LBsXE+lPZNotlBd+LzrhtvAmd3z1grvTT45vnem/Ez35KjlcL19retTTm+QTwS5CSfF/b6sDlDNatCXTWzEDiiCrHXU6MTKq3+W486noLqbDLpV3xo9PGshkusVaZdK+/D7GZz1ZaRXznlzNqRZGgS6PR7FrQnbSv7Jj3bKDF9dBiO3HtngVMM0yLqT/PZdXq1IoHRlt/CeQ68xlzPEQc9xkGghnXzDLMxL+KAu1Fn1ohHHqweX58P2Ae+rv0UeNcVuBU06/EkYs+2QP9OtpyDeD1F8ZnH/kzM7zAC6zFfDWl+H5mpvrBTvuWoIOKorK7G5V4ujJa1JA20JSc=
-    on_success: change
-    on_failure: always
-
-env:
-  global:
-    secure: vX1s0hOUuv4+37O/6WoWAmjCYri8JSA6NNBRTiGhF2rG89f0P6l2e0IQJjVS1mBIsosvuu+DEFEVqURfO55EorPwS02IXuak9YhgMCdfit5KIc6quOvFeiNGPvd47x2QWx/zAUMpTZAv0PcrQ/gR6sIH68ysGxye1+P0zd8ygiRqvGT6lyu9YUMNB0b6XhMD8VWU3KCqPyD6eBpZKeXZxdz24lVNqPjFrDyG5Pj3z3xIfGwWbAIxv3SicBr6azM9aLJhv0LOyyj6Xt9JY73ENYTeD7NMV9vmXZfInZ2MHly8fjaHXlgd2uGA9yGI+Zs8cpMUKo8VVuWKXfszJM4vrPGkdZYLUEz5hQg0ddKauQuQVqzU/kG1zSrW9wm8PfBISmcDvolF2/sf6CepCbYU4dpPoM+q7G2RQiFzdntsnMCYW+uUB+a1PcGPbdv3dzKevFZsnyjujFxtKznmMMp3D5n0WqYzJsQk2BzYT4ha3qlh0i17hRYU/rk/aab4rogqUucuV5V0VMs/wLwwlrKXmM6qrlfHxYbDLlG3cTMn+fmMkDVWdFBOIeWjBtUIL4yq8uUlGGaUafq2MA2M/Bntgv0fVAKwQh9g3k2gKFXA452kTBrhQSUjch0GMhPlU+lMiiekcNShJGiRqhiwc+w2xoewZl+Ga3QiW16zIPaRMUQ=
 
 cache:
   directories:
     - node_modules
+
+env:
+  global:
+    secure: vX1s0hOUuv4+37O/6WoWAmjCYri8JSA6NNBRTiGhF2rG89f0P6l2e0IQJjVS1mBIsosvuu+DEFEVqURfO55EorPwS02IXuak9YhgMCdfit5KIc6quOvFeiNGPvd47x2QWx/zAUMpTZAv0PcrQ/gR6sIH68ysGxye1+P0zd8ygiRqvGT6lyu9YUMNB0b6XhMD8VWU3KCqPyD6eBpZKeXZxdz24lVNqPjFrDyG5Pj3z3xIfGwWbAIxv3SicBr6azM9aLJhv0LOyyj6Xt9JY73ENYTeD7NMV9vmXZfInZ2MHly8fjaHXlgd2uGA9yGI+Zs8cpMUKo8VVuWKXfszJM4vrPGkdZYLUEz5hQg0ddKauQuQVqzU/kG1zSrW9wm8PfBISmcDvolF2/sf6CepCbYU4dpPoM+q7G2RQiFzdntsnMCYW+uUB+a1PcGPbdv3dzKevFZsnyjujFxtKznmMMp3D5n0WqYzJsQk2BzYT4ha3qlh0i17hRYU/rk/aab4rogqUucuV5V0VMs/wLwwlrKXmM6qrlfHxYbDLlG3cTMn+fmMkDVWdFBOIeWjBtUIL4yq8uUlGGaUafq2MA2M/Bntgv0fVAKwQh9g3k2gKFXA452kTBrhQSUjch0GMhPlU+lMiiekcNShJGiRqhiwc+w2xoewZl+Ga3QiW16zIPaRMUQ=
 
 install: 'npm install'
 before_script: 'snyk auth $SNYK_TOKEN'
