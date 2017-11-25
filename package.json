@@ -29,9 +29,9 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "xo && ava -v",
+    "test": "snyk test && xo && ava -v",
     "snyk-protect": "snyk protect",
-    "prepublish": "npm run snyk-protect"
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "bluebird": "^3.5.0",
