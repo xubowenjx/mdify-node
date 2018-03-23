@@ -44,7 +44,7 @@ const failExit = msg => {
   process.exit(1);
 };
 
-const source = cli.input[0];
+const [source] = cli.input;
 
 if (!source) {
   failExit(`${chalk.dim('<source>')} must be defined`);
@@ -68,7 +68,7 @@ const config = {
 
 const mdify = new MDify(config);
 
-mdify.makeHTML().then(html => {
+mdify.makeHTML().then(html => { // eslint-disable-line promise/prefer-await-to-then
   const markdown = mdify.makeMD(html, ora);
 
   if (!silent) {

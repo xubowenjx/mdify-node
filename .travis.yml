@@ -2,14 +2,11 @@ language: node_js
 node_js:
   - 'node'
   - '8'
-  - '7'
-  - '6'
 
 matrix:
   fast_finish: true
   allow_failures:
     - node_js: 'node'
-    - node_js: '8'
 
 os:
   - osx
@@ -23,10 +20,5 @@ cache:
   directories:
     - node_modules
 
-env:
-  global:
-    secure: vX1s0hOUuv4+37O/6WoWAmjCYri8JSA6NNBRTiGhF2rG89f0P6l2e0IQJjVS1mBIsosvuu+DEFEVqURfO55EorPwS02IXuak9YhgMCdfit5KIc6quOvFeiNGPvd47x2QWx/zAUMpTZAv0PcrQ/gR6sIH68ysGxye1+P0zd8ygiRqvGT6lyu9YUMNB0b6XhMD8VWU3KCqPyD6eBpZKeXZxdz24lVNqPjFrDyG5Pj3z3xIfGwWbAIxv3SicBr6azM9aLJhv0LOyyj6Xt9JY73ENYTeD7NMV9vmXZfInZ2MHly8fjaHXlgd2uGA9yGI+Zs8cpMUKo8VVuWKXfszJM4vrPGkdZYLUEz5hQg0ddKauQuQVqzU/kG1zSrW9wm8PfBISmcDvolF2/sf6CepCbYU4dpPoM+q7G2RQiFzdntsnMCYW+uUB+a1PcGPbdv3dzKevFZsnyjujFxtKznmMMp3D5n0WqYzJsQk2BzYT4ha3qlh0i17hRYU/rk/aab4rogqUucuV5V0VMs/wLwwlrKXmM6qrlfHxYbDLlG3cTMn+fmMkDVWdFBOIeWjBtUIL4yq8uUlGGaUafq2MA2M/Bntgv0fVAKwQh9g3k2gKFXA452kTBrhQSUjch0GMhPlU+lMiiekcNShJGiRqhiwc+w2xoewZl+Ga3QiW16zIPaRMUQ=
-
 install: 'npm install'
-before_script: 'snyk auth $SNYK_TOKEN'
 script: 'npm test'

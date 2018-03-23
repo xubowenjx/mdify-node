@@ -21,38 +21,35 @@
     "url": "https://github.com/stoelzle/mdify-node/issues"
   },
   "engines": {
-    "node": ">=6",
-    "npm": ">=3"
+    "node": ">=8",
+    "npm": ">=5"
   },
   "bin": {
     "mdify": "./index.js"
   },
   "main": "index.js",
   "scripts": {
-    "test": "snyk test && xo && ava -v",
-    "snyk-protect": "snyk protect",
-    "prepare": "npm run snyk-protect"
+    "test": "xo && ava -v"
   },
   "dependencies": {
     "bluebird": "^3.5.0",
-    "chalk": "^1.1.3",
+    "chalk": "^2.3.2",
     "mammoth": "^1.3.6",
-    "meow": "^3.7.0",
-    "opn": "^4.0.2",
-    "ora": "^1.2.0",
-    "to-markdown": "^3.0.4",
-    "snyk": "^1.69.3"
+    "meow": "^4.0.0",
+    "opn": "^5.3.0",
+    "ora": "^2.0.0",
+    "to-markdown": "^3.0.4"
   },
   "devDependencies": {
-    "ava": "^0.19.1",
-    "eslint": "^3.19.0",
+    "ava": "^0.25.0",
+    "eslint": "^4.19.1",
     "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-node": "^4.2.2",
+    "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
-    "execa": "^0.6.3",
-    "strip-ansi": "^3.0.1",
-    "xo": "^0.18.1"
+    "execa": "^0.10.0",
+    "strip-ansi": "^4.0.0",
+    "xo": "^0.20.3"
   },
   "ava": {
     "files": [
@@ -64,6 +61,5 @@
     "ignores": [
       "assets/"
     ]
-  },
-  "snyk": true
+  }
 }
