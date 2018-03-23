@@ -68,7 +68,7 @@ const config = {
 
 const mdify = new MDify(config);
 
-mdify.makeHTML().then(html => {
+mdify.makeHTML().then(html => { // eslint-disable-line promise/prefer-await-to-then
   const markdown = mdify.makeMD(html, ora);
 
   if (!silent) {

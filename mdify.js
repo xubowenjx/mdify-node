@@ -19,7 +19,7 @@ module.exports = class MDify {
     return new Promise((resolve, reject) => {
       mammoth
         .convertToHtml({path: this.options.source})
-        .then(result => {
+        .then(result => { // eslint-disable-line promise/prefer-await-to-then
           if (this.options.debug) {
             fs.writeFileAsync(this.options.debug, result.value);
           }
@@ -38,7 +38,7 @@ module.exports = class MDify {
         const destination = path.resolve(this.options.destination);
         const markdown = md(html, {gfm: true});
 
-        fs.writeFileAsync(this.options.destination, markdown).then(() => {
+        fs.writeFileAsync(this.options.destination, markdown).then(() => { // eslint-disable-line promise/prefer-await-to-then
           resolve(markdown);
         });
 
