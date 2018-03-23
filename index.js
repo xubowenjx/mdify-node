@@ -44,7 +44,7 @@ const failExit = msg => {
   process.exit(1);
 };
 
-const source = cli.input[0];
+const [source] = cli.input;
 
 if (!source) {
   failExit(`${chalk.dim('<source>')} must be defined`);

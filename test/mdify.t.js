@@ -27,8 +27,8 @@ test.afterEach(t => {
   for (let i = 0; i < files.length; i++) {
     const file = files[i];
 
-    fs.exists(file, exists => {
-      if (exists) {
+    fs.access(file, fs.constants.F_OK, err => {
+      if (!err) {
         fs.unlinkSync(file);
       }
     });
